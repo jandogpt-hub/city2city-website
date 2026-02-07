@@ -4,7 +4,7 @@
  * City 2 City Industrial Repair
  */
 
-require_once __DIR__ . '/../../includes/config.php';
+require_once __DIR__ . '/../includes/config.php';
 
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
