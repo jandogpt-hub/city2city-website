@@ -37,7 +37,7 @@ define('YEARS_EXPERIENCE', '15');
 // =============================================================================
 // WEBSITE SETTINGS
 // =============================================================================
-define('SITE_URL', 'https://city2cityindustrialrepair.com');
+define('SITE_URL', 'https://gold-woodpecker-323018.hostingersite.com');
 define('SITE_NAME', 'City 2 City Industrial Repair');
 
 // =============================================================================
