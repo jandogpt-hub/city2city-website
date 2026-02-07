@@ -171,11 +171,11 @@ require_once __DIR__ . '/../includes/header.php';
                             <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about the problem you're experiencing..."></textarea>
                         </div>
                         
-                        <!-- reCAPTCHA Widget -->
-                        <!-- TODO: Add your reCAPTCHA site key below -->
+                        <!-- Cloudflare Turnstile Widget -->
+                        <!-- TODO: Add your Turnstile site key below -->
                         <div class="form-group" style="margin-bottom: var(--space-4);">
-                            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
-                            <noscript>Please enable JavaScript to complete the CAPTCHA.</noscript>
+                            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY_HERE" data-theme="light"></div>
+                            <noscript>Please enable JavaScript to complete the verification.</noscript>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-large btn-block">

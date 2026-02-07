@@ -1,39 +1,41 @@
 <?php
 /**
- * Contact Form Handler with reCAPTCHA
+ * Contact Form Handler with Cloudflare Turnstile
  * City 2 City Industrial Repair
  */
 
 require_once __DIR__ . '/../includes/config.php';
 
 // =============================================================================
-// RECAPTCHA CONFIGURATION
-// Get your keys at: https://www.google.com/recaptcha/admin
+// CLOUDFLARE TURNSTILE CONFIGURATION
+// Get your keys at: https://dash.cloudflare.com/?to=/:account/turnstile
 // =============================================================================
-define('RECAPTCHA_SITE_KEY', '');   // TODO: Add your reCAPTCHA site key
-define('RECAPTCHA_SECRET_KEY', ''); // TODO: Add your reCAPTCHA secret key
+define('TURNSTILE_SITE_KEY', '');   // TODO: Add your Turnstile site key
+define('TURNSTILE_SECRET_KEY', ''); // TODO: Add your Turnstile secret key
 
 // =============================================================================
 // EMAIL CONFIGURATION
 // =============================================================================
-define('FORM_RECIPIENT', BUSINESS_EMAIL);      // Client: city2city19@gmail.com
-define('FORM_CC', 'jandogpt@gmail.com');        // Your copy for tracking
+// TESTING MODE - Switch these when going live:
+define('FORM_RECIPIENT', 'jandogpt@gmail.com');  // TESTING - change to BUSINESS_EMAIL when live
+define('FORM_CC', '');                            // Leave empty during testing
+define('FORM_BCC', '');                           // LIVE: alex@localwebchoice.com
 
 /**
- * Verifies reCAPTCHA response with Google
+ * Verifies Cloudflare Turnstile response
  * 
- * @param string $token The reCAPTCHA response token
+ * @param string $token The Turnstile response token
  * @return bool True if verification passed
  */
-function verifyRecaptcha($token) {
-    if (empty(RECAPTCHA_SECRET_KEY)) {
+function verifyTurnstile($token) {
+    if (empty(TURNSTILE_SECRET_KEY)) {
         // Skip verification if no key configured
         return true;
     }
     
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
     $data = [
-        'secret' => RECAPTCHA_SECRET_KEY,
+        'secret' => TURNSTILE_SECRET_KEY,
         'response' => $token,
         'remoteip' => $_SERVER['REMOTE_ADDR']
     ];
@@ -56,9 +58,9 @@ function verifyRecaptcha($token) {
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Verify reCAPTCHA first
-    $recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
-    if (!empty(RECAPTCHA_SECRET_KEY) && !verifyRecaptcha($recaptcha_token)) {
+    // Verify Turnstile first
+    $turnstile_token = $_POST['cf-turnstile-response'] ?? '';
+    if (!empty(TURNSTILE_SECRET_KEY) && !verifyTurnstile($turnstile_token)) {
         header("Location: ./?error=captcha_failed");
         exit;
     }
@@ -94,10 +96,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "----------------------------------------\n";
     $body .= "\nSubmitted: " . date('Y-m-d H:i:s') . "\n";
     
-    // Email Headers with CC
+    // Email Headers
     $headers = "From: Website Contact <noreply@city2cityindustrialrepair.com>\r\n";
     $headers .= "Reply-To: $email\r\n";
-    $headers .= "CC: " . FORM_CC . "\r\n";
+    if (!empty(FORM_CC)) {
+        $headers .= "CC: " . FORM_CC . "\r\n";
+    }
+    if (!empty(FORM_BCC)) {
+        $headers .= "BCC: " . FORM_BCC . "\r\n";
+    }
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Send Email
