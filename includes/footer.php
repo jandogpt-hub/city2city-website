@@ -26,7 +26,7 @@ if (!defined('BUSINESS_NAME')) {
                         </svg>
                         <?php echo BUSINESS_PHONE; ?>
                     </a>
-                    <a href="<?php echo SITE_URL; ?>/contact/" class="btn btn-outline-light btn-large">Request a Quote</a>
+                    <a href="/contact/" class="btn btn-outline-light btn-large">Request a Quote</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@ if (!defined('BUSINESS_NAME')) {
             <div class="footer-grid">
                 <!-- Column 1: About -->
                 <div class="footer-column">
-                    <img src="<?php echo SITE_URL; ?>/assets/images/city2cityindustrialrepair-logo.png" 
+                    <img src="/assets/images/city2cityindustrialrepair-logo.png" 
                          alt="<?php echo BUSINESS_NAME; ?>" 
                          class="footer-logo"
                          width="180"
@@ -62,7 +62,7 @@ if (!defined('BUSINESS_NAME')) {
                     <h3 class="footer-heading">Our Services</h3>
                     <ul class="footer-links">
                         <?php foreach ($services as $service): ?>
-                        <li><a href="<?php echo SITE_URL; ?>/services/<?php echo $service['slug']; ?>/"><?php echo $service['name']; ?></a></li>
+                        <li><a href="/services/<?php echo $service['slug']; ?>/"><?php echo $service['name']; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -75,9 +75,9 @@ if (!defined('BUSINESS_NAME')) {
                         $display_areas = array_slice($service_areas, 0, 8);
                         foreach ($display_areas as $area): 
                         ?>
-                        <li><a href="<?php echo SITE_URL; ?>/areas-served/<?php echo $area['slug']; ?>/"><?php echo $area['name']; ?></a></li>
+                        <li><a href="/areas-served/<?php echo $area['slug']; ?>/"><?php echo $area['name']; ?></a></li>
                         <?php endforeach; ?>
-                        <li><a href="<?php echo SITE_URL; ?>/areas-served/">View All Areas →</a></li>
+                        <li><a href="/areas-served/">View All Areas →</a></li>
                     </ul>
                 </div>
                 
@@ -135,6 +135,6 @@ if (!defined('BUSINESS_NAME')) {
     </a>
     
     <!-- Scripts -->
-    <script src="<?php echo SITE_URL; ?>/assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

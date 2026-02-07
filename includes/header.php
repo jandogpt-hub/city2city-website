@@ -39,7 +39,7 @@ $page_canonical = $page_canonical ?? SITE_URL;
     <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?php echo SITE_URL; ?>/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@ $page_canonical = $page_canonical ?? SITE_URL;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -104,8 +104,8 @@ $page_canonical = $page_canonical ?? SITE_URL;
         <div class="container">
             <div class="header-content">
                 <!-- Logo -->
-                <a href="<?php echo SITE_URL; ?>" class="logo" aria-label="<?php echo BUSINESS_NAME; ?> - Home">
-                    <img src="<?php echo SITE_URL; ?>/assets/images/city2cityindustrialrepair-logo.png" 
+                <a href="/" class="logo" aria-label="<?php echo BUSINESS_NAME; ?> - Home">
+                    <img src="/assets/images/city2cityindustrialrepair-logo.png" 
                          alt="<?php echo BUSINESS_NAME; ?> Logo" 
                          width="200" 
                          height="60"
@@ -115,9 +115,9 @@ $page_canonical = $page_canonical ?? SITE_URL;
                 <!-- Desktop Navigation -->
                 <nav class="main-nav" aria-label="Main navigation">
                     <ul class="nav-list">
-                        <li><a href="<?php echo SITE_URL; ?>/" class="<?php echo isCurrentPage('home') || isCurrentPage('') ? 'active' : ''; ?>">Home</a></li>
+                        <li><a href="/" class="<?php echo isCurrentPage('home') || isCurrentPage('') ? 'active' : ''; ?>">Home</a></li>
                         <li class="has-dropdown">
-                            <a href="<?php echo SITE_URL; ?>/services/" class="<?php echo strpos(getCurrentPage(), 'services') !== false ? 'active' : ''; ?>">
+                            <a href="/services/" class="<?php echo strpos(getCurrentPage(), 'services') !== false ? 'active' : ''; ?>">
                                 Services
                                 <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6 9 12 15 18 9"/>
@@ -125,13 +125,13 @@ $page_canonical = $page_canonical ?? SITE_URL;
                             </a>
                             <ul class="dropdown-menu">
                                 <?php foreach ($services as $service): ?>
-                                <li><a href="<?php echo SITE_URL; ?>/services/<?php echo $service['slug']; ?>/"><?php echo $service['name']; ?></a></li>
+                                <li><a href="/services/<?php echo $service['slug']; ?>/"><?php echo $service['name']; ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
-                        <li><a href="<?php echo SITE_URL; ?>/areas-served/" class="<?php echo strpos(getCurrentPage(), 'areas-served') !== false ? 'active' : ''; ?>">Areas Served</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/about/" class="<?php echo isCurrentPage('about') ? 'active' : ''; ?>">About</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/contact/" class="<?php echo isCurrentPage('contact') ? 'active' : ''; ?>">Contact</a></li>
+                        <li><a href="/areas-served/" class="<?php echo strpos(getCurrentPage(), 'areas-served') !== false ? 'active' : ''; ?>">Areas Served</a></li>
+                        <li><a href="/about/" class="<?php echo isCurrentPage('about') ? 'active' : ''; ?>">About</a></li>
+                        <li><a href="/contact/" class="<?php echo isCurrentPage('contact') ? 'active' : ''; ?>">Contact</a></li>
                     </ul>
                 </nav>
                 
@@ -158,11 +158,11 @@ $page_canonical = $page_canonical ?? SITE_URL;
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <nav aria-label="Mobile navigation">
                 <ul class="mobile-nav-list">
-                    <li><a href="<?php echo SITE_URL; ?>/">Home</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/services/">Services</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/areas-served/">Areas Served</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/about/">About</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/contact/">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/areas-served/">Areas Served</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                 </ul>
                 <a href="tel:<?php echo BUSINESS_PHONE_LINK; ?>" class="btn btn-primary btn-block mobile-cta">
                     Call <?php echo BUSINESS_PHONE; ?>
