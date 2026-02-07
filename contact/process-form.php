@@ -9,13 +9,13 @@ require_once __DIR__ . '/../../includes/config.php';
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Sanitize and Validate Inputs
-    $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $phone = filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
-    $company = filter_var($_POST["company"], FILTER_SANITIZE_STRING);
-    $equipment = filter_var($_POST["equipment"], FILTER_SANITIZE_STRING);
-    $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+    // Sanitize and Validate Inputs (PHP 8.1+ compatible)
+    $name = htmlspecialchars(trim($_POST["name"] ?? ''), ENT_QUOTES, 'UTF-8');
+    $email = filter_var($_POST["email"] ?? '', FILTER_SANITIZE_EMAIL);
+    $phone = htmlspecialchars(trim($_POST["phone"] ?? ''), ENT_QUOTES, 'UTF-8');
+    $company = htmlspecialchars(trim($_POST["company"] ?? ''), ENT_QUOTES, 'UTF-8');
+    $equipment = htmlspecialchars(trim($_POST["equipment"] ?? ''), ENT_QUOTES, 'UTF-8');
+    $message = htmlspecialchars(trim($_POST["message"] ?? ''), ENT_QUOTES, 'UTF-8');
     
     // Check required fields
     if (empty($name) || empty($phone) || empty($message)) {
