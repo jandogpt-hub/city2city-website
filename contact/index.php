@@ -125,6 +125,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <?php 
                             if ($_GET['error'] == 'missing_fields') echo "Please fill in all required fields.";
                             elseif ($_GET['error'] == 'send_failed') echo "Message failed to send. Please try again or call us.";
+                            elseif ($_GET['error'] == 'captcha_failed') echo "Please complete the CAPTCHA verification.";
                             else echo "An error occurred. Please try again.";
                             ?>
                         </div>
@@ -168,6 +169,13 @@ require_once __DIR__ . '/../includes/header.php';
                         <div class="form-group">
                             <label for="message" class="form-label">Describe the Issue *</label>
                             <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about the problem you're experiencing..."></textarea>
+                        </div>
+                        
+                        <!-- reCAPTCHA Widget -->
+                        <!-- TODO: Add your reCAPTCHA site key below -->
+                        <div class="form-group" style="margin-bottom: var(--space-4);">
+                            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
+                            <noscript>Please enable JavaScript to complete the CAPTCHA.</noscript>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-large btn-block">
