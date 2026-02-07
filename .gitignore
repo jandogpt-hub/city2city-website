@@ -40,3 +40,6 @@ coverage/
 
 # Local config overrides
 config.local.php
+
+# Secrets (API keys, etc.) - NEVER commit
+includes/secrets.php

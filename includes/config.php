@@ -11,6 +11,16 @@ if (!defined('SITE_ROOT')) {
     define('SITE_ROOT', dirname(__DIR__));
 }
 
+// Load Secrets (API Keys, etc.) - NOT tracked in Git
+$secrets_file = __DIR__ . '/secrets.php';
+if (file_exists($secrets_file)) {
+    require_once $secrets_file;
+}
+
+// Fallback defaults if secrets.php doesn't exist (e.g. dev environment without keys)
+if (!defined('TURNSTILE_SITE_KEY')) define('TURNSTILE_SITE_KEY', '');
+if (!defined('TURNSTILE_SECRET_KEY')) define('TURNSTILE_SECRET_KEY', '');
+
 // =============================================================================
 // BUSINESS INFORMATION
 // =============================================================================

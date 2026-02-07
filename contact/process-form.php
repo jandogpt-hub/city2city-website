@@ -7,18 +7,12 @@
 require_once __DIR__ . '/../includes/config.php';
 
 // =============================================================================
-// CLOUDFLARE TURNSTILE CONFIGURATION
-// =============================================================================
-define('TURNSTILE_SITE_KEY', '0x4AAAAAACY7n2KmyLqGFFRq');
-define('TURNSTILE_SECRET_KEY', '0x4AAAAAACY7nzDC_bFug8zcMwdvVmcBr1s');
-
-// =============================================================================
 // EMAIL CONFIGURATION
 // =============================================================================
 // TESTING MODE - Switch these when going live:
-define('FORM_RECIPIENT', 'jandogpt@gmail.com');  // TESTING - change to BUSINESS_EMAIL when live
-define('FORM_CC', '');                            // Leave empty during testing
-define('FORM_BCC', '');                           // LIVE: alex@localwebchoice.com
+if (!defined('FORM_RECIPIENT')) define('FORM_RECIPIENT', 'jandogpt@gmail.com');
+if (!defined('FORM_CC')) define('FORM_CC', '');
+if (!defined('FORM_BCC')) define('FORM_BCC', '');
 
 /**
  * Verifies Cloudflare Turnstile response
