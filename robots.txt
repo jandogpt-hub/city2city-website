@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://gold-woodpecker-323018.hostingersite.com/sitemap.xml
+Sitemap: https://city2cityindustrialrepair.com/sitemap.xml
 
 # Disallow admin/system directories
 Disallow: /includes/
