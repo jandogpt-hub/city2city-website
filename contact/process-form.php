@@ -8,10 +8,9 @@ require_once __DIR__ . '/../includes/config.php';
 
 // =============================================================================
 // CLOUDFLARE TURNSTILE CONFIGURATION
-// Get your keys at: https://dash.cloudflare.com/?to=/:account/turnstile
 // =============================================================================
-define('TURNSTILE_SITE_KEY', '');   // TODO: Add your Turnstile site key
-define('TURNSTILE_SECRET_KEY', ''); // TODO: Add your Turnstile secret key
+define('TURNSTILE_SITE_KEY', '0x4AAAAAACY7n2KmyLqGFFRq');
+define('TURNSTILE_SECRET_KEY', '0x4AAAAAACY7nzDC_bFug8zcMwdvVmcBr1s');
 
 // =============================================================================
 // EMAIL CONFIGURATION

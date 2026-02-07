@@ -172,9 +172,8 @@ require_once __DIR__ . '/../includes/header.php';
                         </div>
                         
                         <!-- Cloudflare Turnstile Widget -->
-                        <!-- TODO: Add your Turnstile site key below -->
                         <div class="form-group" style="margin-bottom: var(--space-4);">
-                            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY_HERE" data-theme="light"></div>
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAACY7n2KmyLqGFFRq" data-theme="light"></div>
                             <noscript>Please enable JavaScript to complete the verification.</noscript>
                         </div>
                         
