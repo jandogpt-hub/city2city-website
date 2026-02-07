@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email Configuration
     $to = FORM_RECIPIENT;
-    $subject = "New Website Inquiry from $name";
+    $subject = "Jesse, you have a new form fill. It's time to follow up.";
     
     // Email Body
     $body = "New message from your City 2 City Industrial Repair website:\n\n";
