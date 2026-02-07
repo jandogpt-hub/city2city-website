@@ -4,14 +4,14 @@
  * City 2 City Industrial Repair
  */
 
-require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/../includes/config.php';
 
 // Page-specific SEO
 $page_title = 'Contact Us | ' . BUSINESS_NAME . ' | ' . BUSINESS_PHONE;
 $page_description = 'Contact City 2 City Industrial Repair for mobile forklift repair services in City of Industry. Call ' . BUSINESS_PHONE . ' for same-day service.';
 $page_canonical = SITE_URL . '/contact/';
 
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
     <!-- Page Hero -->
@@ -171,4 +171,4 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

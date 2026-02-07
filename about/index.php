@@ -4,14 +4,14 @@
  * City 2 City Industrial Repair
  */
 
-require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/../includes/config.php';
 
 // Page-specific SEO
 $page_title = 'About Us | ' . BUSINESS_NAME . ' | Whittier, CA';
 $page_description = 'Meet Jesse Nevarez, owner of City 2 City Industrial Repair. Serving City of Industry since 2018 with honest, reliable mobile forklift repair services.';
 $page_canonical = SITE_URL . '/about/';
 
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
     <!-- Page Hero -->
@@ -108,4 +108,4 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>
