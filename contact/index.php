@@ -115,28 +115,40 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
                 </div>
                 
+                
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h2 style="margin-bottom: var(--space-6);">Send Us a Message</h2>
-                    <form id="contact-form" action="#" method="POST">
+                    
+                    <?php if (isset($_GET['error'])): ?>
+                        <div style="background: #fee; color: #c00; padding: 1rem; margin-bottom: 1rem; border-radius: 4px;">
+                            <?php 
+                            if ($_GET['error'] == 'missing_fields') echo "Please fill in all required fields.";
+                            elseif ($_GET['error'] == 'send_failed') echo "Message failed to send. Please try again or call us.";
+                            else echo "An error occurred. Please try again.";
+                            ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <form id="contact-form" action="process-form.php" method="POST">
                         <div class="form-group">
                             <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
                         </div>
                         
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                            <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(626) 555-0123">
                         </div>
                         
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com">
                         </div>
                         
                         <div class="form-group">
                             <label for="company" class="form-label">Company Name</label>
-                            <input type="text" id="company" name="company" class="form-input">
+                            <input type="text" id="company" name="company" class="form-input" placeholder="ACME Industries">
                         </div>
                         
                         <div class="form-group">
