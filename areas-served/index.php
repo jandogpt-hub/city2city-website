@@ -33,9 +33,9 @@ require_once __DIR__ . '/../includes/header.php';
     <section class="section">
         <div class="container">
             <header class="section-header">
-                <span class="section-label">Primary Coverage</span>
-                <h2 class="section-title">Tier 1 Service Areas (0-5 Miles)</h2>
-                <p class="section-subtitle">Our core service area with the fastest response times.</p>
+                <span class="section-label">Nearby Service Areas</span>
+                <h2 class="section-title">Local Service Areas (0-5 Miles)</h2>
+                <p class="section-subtitle">Fast response times throughout our local area.</p>
             </header>
             
             <div class="areas-grid">
@@ -59,9 +59,9 @@ require_once __DIR__ . '/../includes/header.php';
     <section class="section" style="background: var(--color-background-alt);">
         <div class="container">
             <header class="section-header">
-                <span class="section-label">Extended Coverage</span>
-                <h2 class="section-title">Tier 2 Service Areas (5-10 Miles)</h2>
-                <p class="section-subtitle">Extended service area with same-day availability.</p>
+                <span class="section-label">All Service Areas</span>
+                <h2 class="section-title">Regional Service Areas (5-10 Miles)</h2>
+                <p class="section-subtitle">Same-day service available throughout the region.</p>
             </header>
             
             <div class="areas-grid">
