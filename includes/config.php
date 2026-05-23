@@ -34,6 +34,7 @@ define('BUSINESS_ADDRESS_CITY', 'Whittier');
 define('BUSINESS_ADDRESS_STATE', 'CA');
 define('BUSINESS_ADDRESS_ZIP', '90601');
 define('BUSINESS_ADDRESS_FULL', '11704 Merit Ln, Whittier, CA 90601');
+define('BUSINESS_ADDRESS_DISPLAY', preg_replace('/^\d+[A-Za-z\-]*\s+/', '', BUSINESS_ADDRESS_FULL));
 
 // Coordinates
 define('BUSINESS_LAT', '33.959329496');
