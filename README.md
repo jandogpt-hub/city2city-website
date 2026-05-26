@@ -70,7 +70,7 @@ Then visit `http://localhost:8000`
 
 - **Phone:** (626) 709-3085
 - **Email:** city2city19@gmail.com
-- **Address:** 11704 Merit Ln, Whittier, CA 90601
+- **Address:** Merit Ln, Whittier, CA 90601
 - **Website:** https://city2cityindustrialrepair.com
 
 ## 📝 License
