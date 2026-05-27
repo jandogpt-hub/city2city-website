@@ -4,8 +4,9 @@
 # Enable Rewrite Engine
 RewriteEngine On
 
-# Force HTTPS
+# Force HTTPS (skip for local dev)
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !\.local$
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove www (or add www - choose one)

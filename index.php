@@ -238,7 +238,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="why-grid">
             <div class="why-image">
-                <img src="<?php echo SITE_URL; ?>/assets/images/city2cityindustrial-repair-forklift-repair-service-van.jpg"
+                <img src="https://res.cloudinary.com/dapakfe59/image/upload/w_1200,h_800,c_fill,g_auto,q_85,fl_keep_iptc/v1779858162/city-2city-industrial-repair-mobile-forklift-repair-whittier-repair-van_e7o7kn.jpg"
                     alt="City 2 City Industrial Repair service van providing mobile forklift repair" width="600"
                     height="400" loading="lazy">
             </div>
@@ -426,6 +426,37 @@ require_once __DIR__ . '/includes/header.php';
             <a href="<?php echo GBP_URL; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                 Read All Reviews on Google
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- Forklift Sales & Rentals Section -->
+<section class="section" id="forklift-rentals">
+    <div class="container">
+        <header class="section-header">
+            <span class="section-label">Available Now</span>
+            <h2 class="section-title">Forklift Rental &amp; Sales Near City of Industry</h2>
+            <p class="section-subtitle">Need a forklift fast? We offer flexible rental and purchase options for businesses throughout the San Gabriel Valley.</p>
+        </header>
+
+        <div class="why-grid">
+            <div class="why-image">
+                <img src="https://res.cloudinary.com/dapakfe59/image/upload/w_1200,h_800,c_fill,g_auto,q_85,fl_keep_iptc/v1779858159/city-2city-industrial-forklift-rental-sales-near-whittier-003_azos2u.jpg" alt="Forklift available for rental and sale near City of Industry" width="600" height="400" loading="lazy">
+            </div>
+            <div class="why-content">
+                <span class="section-label">Rentals &amp; Sales</span>
+                <h3 class="section-title" style="text-align: left; margin-bottom: var(--space-6);">Flexible Options for Every Business</h3>
+                <p style="margin-bottom: var(--space-6); color: var(--color-foreground-muted);">Whether you need a short-term rental to cover a breakdown or you're looking to purchase reliable used equipment, City 2 City Industrial Repair has you covered.</p>
+                <ul style="margin-bottom: var(--space-8); color: var(--color-foreground-muted); padding-left: 1.25rem;">
+                    <li style="margin-bottom: var(--space-3);">Short &amp; long-term rentals available</li>
+                    <li style="margin-bottom: var(--space-3);">Quality used forklifts for sale</li>
+                    <li style="margin-bottom: var(--space-3);">All makes &amp; models</li>
+                    <li style="margin-bottom: var(--space-3);">Serving City of Industry and surrounding areas</li>
+                </ul>
+                <a href="tel:<?php echo BUSINESS_PHONE_LINK; ?>" class="btn btn-primary">
+                    Call to Check Availability
+                </a>
+            </div>
         </div>
     </div>
 </section>
