@@ -103,7 +103,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <!-- Google Map -->
                     <div style="margin-top: var(--space-8); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.8372!2d-118.021333248!3d33.959329496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d45e5e7e5e5e%3A0x3c1f35a27e0c8306!2s11704%20Merit%20Ln%2C%20Whittier%2C%20CA%2090601!5e0!3m2!1sen!2sus!4v1234567890"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211512.09103077446!2d-117.95970255!3d34.072682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d30f0a93cab7%3A0x3c2420b652ea3086!2sCity%202%20City%20Industrial%20Repair!5e0!3m2!1sen!2sus!4v1783545582613!5m2!1sen!2sus"
                             width="100%" 
                             height="300" 
                             style="border:0;" 
