@@ -29,12 +29,16 @@ define('BUSINESS_TAGLINE', 'Keeping Your Business Moving');
 define('BUSINESS_PHONE', '(626) 709-3085');
 define('BUSINESS_PHONE_LINK', '+16267093085');
 define('BUSINESS_EMAIL', 'city2city19@gmail.com');
-define('BUSINESS_ADDRESS_STREET', 'Main St');
+// Real street address - schema.org / structured data only, for NAP consistency
+// with the Google Business Profile. Never rendered in visible page content.
+define('BUSINESS_ADDRESS_STREET', '11704 Merit Ln');
 define('BUSINESS_ADDRESS_CITY', 'Whittier');
 define('BUSINESS_ADDRESS_STATE', 'CA');
 define('BUSINESS_ADDRESS_ZIP', '90601');
-define('BUSINESS_ADDRESS_FULL', 'Whittier, CA 90601');
-define('BUSINESS_ADDRESS_DISPLAY', preg_replace('/^\d+[A-Za-z\-]*\s+/', '', BUSINESS_ADDRESS_FULL));
+
+// Public-facing mailing address - shown on the contact page and footer
+define('BUSINESS_ADDRESS_FULL', 'PO Box 9317, Whittier, CA 90601');
+define('BUSINESS_ADDRESS_DISPLAY', 'Whittier, CA 90601');
 
 // Coordinates
 define('BUSINESS_LAT', '33.959329496');
