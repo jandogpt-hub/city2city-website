@@ -1396,38 +1396,6 @@ p:last-child {
     padding: var(--space-8);
 }
 
-.form-group {
-    margin-bottom: var(--space-5);
-}
-
-.form-label {
-    display: block;
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--space-2);
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: var(--space-3) var(--space-4);
-    font-size: var(--text-base);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    transition: border-color var(--transition-fast);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
-}
-
-.form-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
 @media (min-width: 1024px) {
     .contact-grid {
         grid-template-columns: 1fr 1fr;

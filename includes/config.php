@@ -17,10 +17,6 @@ if (file_exists($secrets_file)) {
     require_once $secrets_file;
 }
 
-// Fallback defaults if secrets.php doesn't exist (e.g. dev environment without keys)
-if (!defined('TURNSTILE_SITE_KEY')) define('TURNSTILE_SITE_KEY', '');
-if (!defined('TURNSTILE_SECRET_KEY')) define('TURNSTILE_SECRET_KEY', '');
-
 // =============================================================================
 // BUSINESS INFORMATION
 // =============================================================================
