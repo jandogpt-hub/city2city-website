@@ -92,56 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ==========================================================================
-    // Form Validation (Contact Form)
-    // ==========================================================================
-    
-    const contactForm = document.querySelector('#contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            let isValid = true;
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('error');
-                } else {
-                    field.classList.remove('error');
-                }
-            });
-            
-            // Email validation
-            const emailField = contactForm.querySelector('[type="email"]');
-            if (emailField && emailField.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailField.value)) {
-                    isValid = false;
-                    emailField.classList.add('error');
-                }
-            }
-            
-            // Phone validation
-            const phoneField = contactForm.querySelector('[type="tel"]');
-            if (phoneField && phoneField.value) {
-                const phoneRegex = /^[\d\s\-\(\)\.+]{10,}$/;
-                if (!phoneRegex.test(phoneField.value)) {
-                    isValid = false;
-                    phoneField.classList.add('error');
-                }
-            }
-            
-            if (!isValid) {
-                e.preventDefault();
-                const firstError = contactForm.querySelector('.error');
-                if (firstError) {
-                    firstError.focus();
-                }
-            }
-        });
-    }
-    
-    // ==========================================================================
     // Lazy Loading Images
     // ==========================================================================
     
@@ -197,6 +147,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
+
+    // Ligna Form embed submits via fetch, so the submit listener above never
+    // fires for it. It dispatches DataFormSubmitted on a successful submit.
+    document.addEventListener('DataFormSubmitted', function(e) {
+        if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({
+                'event': 'form_submission',
+                'form_id': 'ligna_' + ((e.detail && e.detail.form_id) || 'unknown'),
+                'form_name': 'contact_form'
+            });
+        }
     });
     
     // ==========================================================================

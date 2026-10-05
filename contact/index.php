@@ -119,76 +119,17 @@ require_once __DIR__ . '/../includes/header.php';
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h2 style="margin-bottom: var(--space-6);">Send Us a Message</h2>
-                    
-                    <?php if (isset($_GET['error'])): ?>
-                        <div style="background: #fee; color: #c00; padding: 1rem; margin-bottom: 1rem; border-radius: 4px;">
-                            <?php 
-                            if ($_GET['error'] == 'missing_fields') echo "Please fill in all required fields.";
-                            elseif ($_GET['error'] == 'send_failed') echo "Message failed to send. Please try again or call us.";
-                            elseif ($_GET['error'] == 'captcha_failed') echo "Please complete the CAPTCHA verification.";
-                            else echo "An error occurred. Please try again.";
-                            ?>
-                        </div>
-                    <?php endif; ?>
 
-                    <form id="contact-form" action="process-form.php" method="POST">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(626) 555-0123">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company Name</label>
-                            <input type="text" id="company" name="company" class="form-input" placeholder="ACME Industries">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="equipment" class="form-label">Equipment Type</label>
-                            <select id="equipment" name="equipment" class="form-input">
-                                <option value="">Select equipment type</option>
-                                <option value="electric-forklift">Electric Forklift</option>
-                                <option value="propane-forklift">Propane/LPG Forklift</option>
-                                <option value="diesel-forklift">Diesel Forklift</option>
-                                <option value="reach-truck">Reach Truck</option>
-                                <option value="pallet-jack">Pallet Jack</option>
-                                <option value="scissor-lift">Scissor Lift</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Describe the Issue *</label>
-                            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about the problem you're experiencing..."></textarea>
-                        </div>
-                        
-                        <!-- Cloudflare Turnstile Widget -->
-                        <div class="form-group" style="margin-bottom: var(--space-4);">
-                            <?php if (defined('TURNSTILE_SITE_KEY') && !empty(TURNSTILE_SITE_KEY)): ?>
-                            <div class="cf-turnstile" data-sitekey="<?php echo TURNSTILE_SITE_KEY; ?>" data-theme="light"></div>
-                            <?php else: ?>
-                            <!-- Turnstile site key missing -->
-                            <?php endif; ?>
-                            <noscript>Please enable JavaScript to complete the verification.</noscript>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large btn-block">
-                            Send Message
-                        </button>
-                        
-                        <p style="font-size: var(--text-sm); color: var(--color-foreground-muted); margin-top: var(--space-4); text-align: center;">
-                            Need immediate help? <a href="tel:<?php echo BUSINESS_PHONE_LINK; ?>" style="color: var(--color-primary); font-weight: var(--font-weight-semibold);">Call <?php echo BUSINESS_PHONE; ?></a>
-                        </p>
-                    </form>
+                    <!-- Ligna Form embed (renders and submits the form itself) -->
+                    <div class="bv3-dataform-embed"
+                         data-form-id="15137"
+                         data-user-id="22330"></div>
+                    <script src="https://crm.localwebchoice.com/api/data/js/data-formsv3.js" async defer></script>
+                    <noscript>Please enable JavaScript to use the contact form, or call us at <?php echo BUSINESS_PHONE; ?>.</noscript>
+
+                    <p style="font-size: var(--text-sm); color: var(--color-foreground-muted); margin-top: var(--space-4); text-align: center;">
+                        Need immediate help? <a href="tel:<?php echo BUSINESS_PHONE_LINK; ?>" style="color: var(--color-primary); font-weight: var(--font-weight-semibold);">Call <?php echo BUSINESS_PHONE; ?></a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ require_once __DIR__ . '/../includes/config.php';
 // Page-specific SEO
 $page_title = 'Thank You | ' . BUSINESS_NAME;
 $page_description = 'Thank you for contacting City 2 City Industrial Repair. We will get back to you shortly.';
-$page_canonical = SITE_URL . '/contact/thank-you/';
+$page_canonical = SITE_URL . '/contact/thank-you';
 
 require_once __DIR__ . '/../includes/header.php';
 ?>
